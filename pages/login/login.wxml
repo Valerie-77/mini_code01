@@ -1,25 +1,73 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
-
-<view bindtap="changeRole" data-id="1" class="{{roleKey=='collect' ? 'active' : ''}}">
-  数据采集者
+<view class="login-container">
+  <!-- 标题 -->
+  <view class="login-title">
+    <text class="title-text">户外广告监测系统</text>
+    <text class="subtitle-text">请登录您的账号</text>
+  </view>
+  
+  <!-- 角色选择 -->
+  <view class="role-selector">
+    <view 
+      bindtap="changeRole" 
+      data-id="1" 
+      class="role-item {{roleKey=='collect' ? 'active' : ''}}"
+    >
+      <text class="role-text">数据采集者</text>
+    </view>
+    <view 
+      bindtap="changeRole" 
+      data-id="2" 
+      class="role-item {{roleKey=='handle' ? 'active' : ''}}"
+    >
+      <text class="role-text">执法处理者</text>
+    </view>
+  </view>
+  
+  <!-- 登录表单 -->
+  <view class="login-form">
+    <view class="form-item">
+      <text class="label">账号</text>
+      <input 
+        class="input" 
+        placeholder="请输入账号" 
+        value="{{username}}" 
+        bindinput="onUsernameInput"
+        placeholder-class="placeholder"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">密码</text>
+      <input 
+        class="input" 
+        placeholder="请输入密码" 
+        type="password" 
+        value="{{password}}" 
+        bindinput="onPasswordInput"
+        placeholder-class="placeholder"
+      />
+    </view>
+    
+    <!-- 错误提示 -->
+    <view wx:if="{{errorMessage}}" class="error-message">
+      {{errorMessage}}
+    </view>
+    
+    <!-- 登录按钮 -->
+    <t-button 
+      theme="primary" 
+      bindtap="onLogin" 
+      class="login-button"
+      loading="{{isLoading}}"
+      disabled="{{isLoading}}"
+    >
+      {{isLoading ? '登录中...' : '登录'}}
+    </t-button>
+  </view>
+  
+  <!-- 底部信息 -->
+  <view class="footer">
+    <text class="footer-text">© 2026 户外广告监测系统</text>
+  </view>
 </view>
-
-<view bindtap="changeRole" data-id="2" class="{{roleKey=='handle' ? 'active' : ''}}">
-  执法处理者
-</view>
-
-<input 
-  placeholder="账号" 
-  value="{{username}}" 
-  bindinput="onUsernameInput"
-/>
-
-<input 
-  placeholder="密码" 
-  type="password" 
-  value="{{password}}" 
-  bindinput="onPasswordInput"
-/>
-
-<t-button theme="primary" bindtap="onLogin">登录</t-button>
