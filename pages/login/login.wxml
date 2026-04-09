@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<text>pages/login/login.wxml</text>
+
+<view bindtap="changeRole" data-id="1" class="{{roleKey=='collect' ? 'active' : ''}}">
+  数据采集者
+</view>
+
+<view bindtap="changeRole" data-id="2" class="{{roleKey=='handle' ? 'active' : ''}}">
+  执法处理者
+</view>
+
+<input 
+  placeholder="账号" 
+  value="{{username}}" 
+  bindinput="onUsernameInput"
+/>
+
+<input 
+  placeholder="密码" 
+  type="password" 
+  value="{{password}}" 
+  bindinput="onPasswordInput"
+/>
+
+<t-button theme="primary" bindtap="onLogin">登录</t-button>

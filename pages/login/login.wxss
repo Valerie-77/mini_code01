@@ -1,0 +1,8 @@
+/* pages/login/login.wxss */
+view {
+  margin: 60rpx;
+}
+
+.active {
+  color: skyblue;
+}

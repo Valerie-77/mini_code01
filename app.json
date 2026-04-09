@@ -1,0 +1,53 @@
+{
+  "entryPagePath": "pages/login/login",
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/adDetail/adDetail",
+    "pages/adHandle/adHandle",
+    "pages/pdfPreview/pdfPreview",
+    "pages/historyList/historyList",
+    "pages/enforcementList/enforcementList",
+    "pages/upload/upload",
+    "pages/test/test",
+    "pages/my/my"
+  ],
+  "window": {
+    "navigationBarTitleText": "户外广告监测系统",
+    "navigationBarBackgroundColor": "#708bff",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#708bff",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-divider": "tdesign-miniprogram/divider/divider"
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseAddress",
+    "chooseLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "当前需要获取你的经纬度"
+    }
+  }
+}

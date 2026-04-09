@@ -1,0 +1,11 @@
+/* pages/test/test.wxss */
+/* 临时测试样式，让按钮可见 */
+t-button {
+  display: block;
+  margin: 20rpx;
+  background-color: #007aff;
+  color: white;
+  padding: 20rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
