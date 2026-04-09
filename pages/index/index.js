@@ -11,6 +11,24 @@ Page({
     hasUserInfo: false,
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+    bannerList: [
+      {
+        id: 1,
+        image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=outdoor%20advertising%20monitoring%20system%20city%20scene&image_size=landscape_16_9',
+        title: '户外广告智能监测'
+      },
+      {
+        id: 2,
+        image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=urban%20billboard%20inspection%20technology&image_size=landscape_16_9',
+        title: '城市广告牌巡检'
+      },
+      {
+        id: 3,
+        image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=advertising%20compliance%20management%20interface&image_size=landscape_16_9',
+        title: '广告合规管理平台'
+      }
+    ],
+    currentBanner: 0
   },
   bindViewTap() {
     wx.navigateTo({
@@ -46,4 +64,16 @@ Page({
       }
     })
   },
+  onBannerChange(e) {
+    this.setData({
+      currentBanner: e.detail.current
+    })
+  },
+  onBannerTap(e) {
+    const index = e.currentTarget.dataset.index
+    wx.showToast({
+      title: `点击了第${index + 1}张轮播图`,
+      icon: 'none'
+    })
+  }
 })

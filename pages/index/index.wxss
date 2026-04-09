@@ -9,6 +9,39 @@ page {
   overflow-y: hidden;
 }
 
+/* 轮播图样式 */
+.banner-swiper {
+  width: 100%;
+  height: 360rpx;
+  margin-bottom: 30rpx;
+}
+
+.banner-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.banner-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;

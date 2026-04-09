@@ -1,6 +1,32 @@
 <!--index.wxml-->
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
+    <!-- 轮播图 -->
+    <swiper 
+      class="banner-swiper" 
+      indicator-dots="{{true}}" 
+      autoplay="{{true}}" 
+      interval="{{3000}}" 
+      duration="{{1000}}" 
+      circular="{{true}}"
+      bindchange="onBannerChange"
+    >
+      <swiper-item wx:for="{{bannerList}}" wx:key="id">
+        <view 
+          class="banner-item" 
+          data-index="{{index}}" 
+          bindtap="onBannerTap"
+        >
+          <image 
+            class="banner-image" 
+            src="{{item.image}}" 
+            mode="aspectFill"
+          ></image>
+          <view class="banner-title">{{item.title}}</view>
+        </view>
+      </swiper-item>
+    </swiper>
+
     <view class="userinfo">
       <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
         <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
